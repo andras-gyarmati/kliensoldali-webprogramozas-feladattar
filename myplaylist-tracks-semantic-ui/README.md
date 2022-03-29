@@ -33,3 +33,8 @@ Ebben a feladatban elő van készítve egy lejátszási listákat kezelő alkalm
 7. Context
    1. Próbáld meg a `useTracksService`-t contextbe csomagolni és a Provider értékeként publikálni (`TracksContext` és `TracksProvider`)!
    2. A `Tracks` komponensben használd a `useContext` hook-kal!
+8. Tárolás
+   1. Tároljuk el a track-eket localStorage-ban!
+   2. Majd tároljuk el a track-eket indexedDB-ben! Ehhez használjuk a [`localForage` csomagot](https://github.com/localForage/localForage), amely egy localStorage-hoz hasonló API-n keresztül tudja aszinkron módon az indexedDB-t használni!
+   3. A `useTracksService`-ben a memóriába (állapotba) írás mellett végezzük el a perzisztáló vagy olvasó műveleteket! Ügyelj arra, hogy aszinkron API-t használsz!
+   4. Szervezd ki a perzisztáló műveleteket egy külön API osztályba!
