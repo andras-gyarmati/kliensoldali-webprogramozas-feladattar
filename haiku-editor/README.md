@@ -31,16 +31,16 @@ A feladat többféle módon is megoldható:
    - `MODIFY_HAIKU`: a kiválasztott haiku módosításához
    - `REMOVE_HAIKU`: egy haiku törléséhez
 5. Ezek alapján készítsd el a Redux store-odat (pl. `state/store.js`)! Itt is több lehetőség van:
-   1. Natív Redux elemekkel (alacsony szint):
+   1. Natív [Redux](https://redux.js.org/) elemekkel (alacsony szint):
       - akció konstansok
       - akció generátorok
       - reducerek
       - store létrehozása és konfigurálása
-   2. Redux Toolkit használatával (közepes szint):
+   2. [Redux Toolkit](https://redux-toolkit.js.org/) használatával (közepes szint):
       - `configureStore`
       - `createAction`
       - `createReducer`
-   3. Redux Toolkit használatával (magas szint):
+   3. [Redux Toolkit](https://redux-toolkit.js.org/) használatával (magas szint):
       - `configureStore`
       - `createSlice`
 6. Próbáld ki a store-odat még React nélkül:
