@@ -5,14 +5,15 @@ const DataTypes = Sequelize.DataTypes;
 
 module.exports = function (app) {
   const sequelizeClient = app.get("sequelizeClient");
-  const puzzles = sequelizeClient.define(
-    "puzzles",
+  const solutions = sequelizeClient.define(
+    "solutions",
     {
-      title: {
-        type: DataTypes.STRING,
+      solved: {
+        type: DataTypes.BOOLEAN,
         allowNull: false,
+        default: false,
       },
-      puzzle: {
+      table: {
         type: DataTypes.STRING,
         allowNull: false,
       },
@@ -23,16 +24,23 @@ module.exports = function (app) {
           options.raw = true;
         },
       },
+      indexes: [
+        {
+          unique: true,
+          fields: ["userId", "puzzleId"],
+        },
+      ],
     }
   );
 
   // eslint-disable-next-line no-unused-vars
-  puzzles.associate = function (models) {
+  solutions.associate = function (models) {
     // Define associations here
     // See https://sequelize.org/master/manual/assocs.html
-    const { solutions } = models;
-    puzzles.hasMany(solutions);
+    const { users, puzzles } = models;
+    solutions.belongsTo(users);
+    solutions.belongsTo(puzzles);
   };
 
-  return puzzles;
+  return solutions;
 };

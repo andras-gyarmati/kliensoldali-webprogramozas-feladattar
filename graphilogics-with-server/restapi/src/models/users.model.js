@@ -31,8 +31,8 @@ module.exports = function (app) {
   users.associate = function (models) {
     // Define associations here
     // See https://sequelize.org/master/manual/assocs.html
-    const { puzzles } = models;
-    users.hasMany(puzzles);
+    const { solutions } = models;
+    users.hasMany(solutions);
   };
 
   return users;
