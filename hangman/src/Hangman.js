@@ -1,5 +1,7 @@
+import { useHangmanContext } from "./HangmanContext";
+
 const Hangman = () => {
-  const wrong = 3;
+  const { wrongs } = useHangmanContext();
 
   const parts = [
     <line x1="0" y1="99%" x2="100%" y2="99%" key={1} />,
@@ -12,7 +14,7 @@ const Hangman = () => {
     <line x1="60%" y1="70%" x2="50%" y2="90%" key={8} />,
     <line x1="60%" y1="70%" x2="70%" y2="90%" key={9} />,
   ];
-  const partsToShow = parts.slice(0, wrong);
+  const partsToShow = parts.slice(0, wrongs);
 
   return (
     <svg width="200px" height="200px" stroke="black">

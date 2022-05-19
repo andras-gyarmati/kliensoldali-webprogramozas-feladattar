@@ -1,7 +1,7 @@
 import { useHangmanContext } from "./HangmanContext";
 
 const Buttons = () => {
-  const { buttons, setButtons, handleButtonClick } = useHangmanContext();
+  const { buttons, setButtons, handleButtonClick, reset } = useHangmanContext();
 
   function onButtonClick(button) {
     setButtons(prevValue => prevValue.map(b => b.label === button.label ? { label: button.label, disabled: true } : b));
@@ -12,9 +12,12 @@ const Buttons = () => {
     return <button key={b.label} onClick={() => onButtonClick(b)} disabled={b.disabled}>{b.label}</button>;
   });
   return (
-    <div id="betuk">
-      {buttonElements}
-    </div>
+    <>
+      <button onClick={reset}>New game</button>
+      <div id="betuk">
+        {buttonElements}
+      </div>
+    </>
   );
 };
 

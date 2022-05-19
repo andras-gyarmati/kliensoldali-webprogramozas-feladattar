@@ -5,21 +5,11 @@ import Word from "./Word";
 import HangmanProvider from "./HangmanContext";
 
 const App = () => {
-  // Application state (data)
-  const maxTips = 9;
-  const word = "alma";
-  const tips = ["a", "l", "s", "s", "s", "s", "s", "s", "s"];
-
-  // Event handlers
-
-  // Computed values
-
   return (
     <>
       <h1>Hangman</h1>
       <HangmanProvider>
         <Word />
-        <button>New game</button>
         <Buttons />
         <Result />
         <Hangman />

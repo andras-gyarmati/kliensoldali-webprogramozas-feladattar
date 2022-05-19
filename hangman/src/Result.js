@@ -1,9 +1,11 @@
+import { useHangmanContext } from "./HangmanContext";
+
 const Result = () => {
-  const wrong = 3;
-  const maxTips = 9;
+  const { wrongs, maxTips } = useHangmanContext();
+
   return (
     <div id="eredmeny">
-      {wrong}/{maxTips}
+      {wrongs}/{maxTips}
     </div>
   );
 };
